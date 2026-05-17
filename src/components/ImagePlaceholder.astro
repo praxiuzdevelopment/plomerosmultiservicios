@@ -1,0 +1,34 @@
+---
+interface Props {
+  text: string;
+  src?: string;
+  width?: string;
+  height?: string;
+  className?: string;
+  alt?: string;
+}
+
+const { text, src, width = "100%", height = "250px", className = "", alt } = Astro.props;
+---
+
+<div
+  class:list={[
+    "relative overflow-hidden",
+    !src && "bg-placeholder rounded-xl flex items-center justify-center p-4",
+    className
+  ]}
+  style={`${width ? `width: ${width};` : ""} ${height ? `height: ${height};` : ""}`}
+>
+  {src ? (
+    <img
+      src={src}
+      alt={alt || text}
+      class="w-full h-full object-cover"
+      loading="lazy"
+    />
+  ) : (
+    <p class="text-text-light text-sm text-center font-medium italic">
+      {text}
+    </p>
+  )}
+</div>

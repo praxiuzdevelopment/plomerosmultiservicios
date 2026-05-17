@@ -1,0 +1,103 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
+import { plumbingServices, electricalServices } from "../../data/services";
+---
+
+<MainLayout title="Servicios" description="Conoce todos nuestros servicios de plomería y electricidad doméstica en Cali. Destapes, reparaciones, instalaciones y más.">
+
+  {/* Header */}
+  <section class="bg-gradient-to-br from-accent/5 via-white to-secondary/5 py-16 md:py-20 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <span class="text-secondary font-semibold text-sm uppercase tracking-wider animate-fade-in">Nuestros servicios</span>
+      <h1 class="font-heading text-4xl md:text-5xl font-extrabold text-text mt-2 mb-4 animate-slide-up">
+        Servicios profesionales para tu hogar
+      </h1>
+      <p class="text-text-light text-lg max-w-2xl mx-auto animate-fade-in animation-delay-200">
+        Ofrecemos soluciones completas en plomería y electricidad doméstica. Selecciona un servicio para conocer más detalles.
+      </p>
+      <div class="inline-flex items-center gap-2 bg-secondary/10 text-secondary text-sm font-semibold px-5 py-2 rounded-full mt-6 animate-scale-in animation-delay-400">
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+        </svg>
+        Todos nuestros servicios incluyen garantía de 30 días
+      </div>
+    </div>
+  </section>
+
+  {/* Plumbing Services */}
+  <section class="py-12 md:py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center">
+          <svg class="w-6 h-6 text-secondary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 2.25c0 0-6.75 8.25-6.75 12a6.75 6.75 0 1013.5 0c0-3.75-6.75-12-6.75-12z" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-heading text-2xl md:text-3xl font-bold">Servicios de Plomería</h2>
+          <p class="text-text-light text-sm">Soluciones hidráulicas profesionales para tu hogar</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {plumbingServices.map((service) => (
+          <ServiceCard
+            title={service.title}
+            description={service.shortDescription}
+            href={`/servicios/${service.slug}`}
+            icon={service.icon}
+            category={service.category}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* Electrical Services */}
+  <section class="py-12 md:py-16 bg-bg-alt">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center gap-3 mb-8">
+        <div class="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+          <svg class="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
+        </div>
+        <div>
+          <h2 class="font-heading text-2xl md:text-3xl font-bold">Servicios de Electricidad</h2>
+          <p class="text-text-light text-sm">Instalaciones y reparaciones eléctricas seguras</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {electricalServices.map((service) => (
+          <ServiceCard
+            title={service.title}
+            description={service.shortDescription}
+            href={`/servicios/${service.slug}`}
+            icon={service.icon}
+            category={service.category}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {/* CTA */}
+  <section class="py-16 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-2xl md:text-3xl font-bold mb-4">¿No encuentras lo que necesitas?</h2>
+      <p class="text-text-light mb-8">Contáctanos y cuéntanos tu problema. Podemos ayudarte con cualquier necesidad de plomería o electricidad en tu hogar.</p>
+      <a
+        href="/contacto"
+        class="inline-flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-dark text-white font-semibold px-8 py-4 rounded-full transition-all duration-300 hover:shadow-lg hover:shadow-secondary/30 hover:-translate-y-0.5"
+      >
+        Contáctanos
+        <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+</MainLayout>
