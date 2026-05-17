@@ -44,11 +44,8 @@ export default function Navbar() {
             <img
               src="/favicon.svg"
               alt="Plomeros Multiservicios"
-              className="h-10 md:h-12 w-auto transition-transform duration-300 group-hover:scale-110"
+              className="h-[50px] md:h-[58px] w-auto transition-transform duration-300 group-hover:scale-110"
             />
-            <span className="font-heading font-extrabold text-xl md:text-2xl text-accent group-hover:text-secondary transition-colors leading-none tracking-tight">
-              Plomeros<br /><span className="text-secondary group-hover:text-accent">Multiservicios</span>
-            </span>
           </a>
 
           {/* Desktop Navigation */}
