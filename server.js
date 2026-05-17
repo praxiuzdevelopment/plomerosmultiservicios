@@ -1,8 +1,9 @@
-process.env.HOST = process.env.HOST || '0.0.0.0';
-// Hostinger Passenger usually sets process.env.PORT, but we provide a fallback
-process.env.PORT = process.env.PORT || 4321;
+import { handler } from './dist/server/entry.mjs';
+import { createServer } from 'http';
 
-import('./dist/server/entry.mjs').catch(err => {
-    console.error("Failed to load Astro server entry point:", err);
-    process.exit(1);
+const server = createServer(handler);
+const port = process.env.PORT || 3000;
+
+server.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
