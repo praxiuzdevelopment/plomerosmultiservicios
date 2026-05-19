@@ -3,8 +3,11 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import ServiceCard from "../../components/ServiceCard.astro";
 import ImagePlaceholder from "../../components/ImagePlaceholder.astro";
 import { allServices, plumbingServices, electricalServices } from "../../data/services";
+import type { Service } from "../../data/services";
 import { getServiceIcon } from "../../data/icons";
 import type { GetStaticPaths } from "astro";
+
+type Props = { service: Service };
 
 export const getStaticPaths: GetStaticPaths = () => {
   return allServices.map((service) => ({
@@ -27,7 +30,7 @@ const sameCategoryServices = (service.category === "plomeria" ? plumbingServices
 const relatedServices = sameCategoryServices.slice(0, 3);
 ---
 
-<MainLayout title={service.title} description={service.shortDescription}>
+<MainLayout title={`${service.title} en Cali`} description={`${service.shortDescription} Servicio a domicilio en Cali, Jamundí y Palmira. Cotización gratis al 315 553 3085.`}>
 
   {/* Breadcrumb + Header */}
   <section class="bg-gradient-to-br from-accent/5 via-white to-secondary/5 py-12 md:py-16 overflow-hidden">

@@ -10,6 +10,9 @@ interface Props {
 }
 
 const { title, description = "Plomeros Multiservicios - Servicios profesionales de plomería y electricidad doméstica en Cali. Soluciones rápidas, seguras y garantizadas." } = Astro.props;
+
+const siteBase = 'https://plomerosmultiservicios.com';
+const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
 ---
 
 <!doctype html>
@@ -23,18 +26,18 @@ const { title, description = "Plomeros Multiservicios - Servicios profesionales 
     
     <!-- SEO Meta Tags -->
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href={Astro.url} />
-    
+    <link rel="canonical" href={canonicalUrl} />
+
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:url" content={canonicalUrl} />
     <meta property="og:title" content={`${title} | Plomeros Multiservicios`} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/favicon.svg" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={Astro.url} />
+    <meta property="twitter:url" content={canonicalUrl} />
     <meta property="twitter:title" content={`${title} | Plomeros Multiservicios`} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content="/favicon.svg" />
@@ -46,6 +49,49 @@ const { title, description = "Plomeros Multiservicios - Servicios profesionales 
       rel="stylesheet"
     />
     <title>{title} | Plomeros Multiservicios</title>
+
+    <!-- LocalBusiness Structured Data -->
+    <script type="application/ld+json" is:inline>{JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Plomeros Multiservicios",
+      "description": "Servicios profesionales de plomería y electricidad a domicilio en Cali, Jamundí, Palmira y Yumbo. Destape de cañerías sin romper, detección de fugas con geófono y reparaciones eléctricas urgentes.",
+      "url": "https://plomerosmultiservicios.com",
+      "telephone": ["+573155533085", "+573184689368"],
+      "areaServed": [
+        {"@type": "City", "name": "Santiago de Cali"},
+        {"@type": "City", "name": "Jamundí"},
+        {"@type": "City", "name": "Palmira"},
+        {"@type": "City", "name": "Yumbo"},
+        {"@type": "City", "name": "Candelaria"}
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Santiago de Cali",
+        "addressRegion": "Valle del Cauca",
+        "addressCountry": "CO"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "07:00",
+        "closes": "18:00"
+      },
+      "priceRange": "$$",
+      "currenciesAccepted": "COP",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Plomería y Electricidad en Cali",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Destape de cañerías sin romper en Cali"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Detección de fugas con geófono en Cali"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Reparación de cortocircuitos urgente en Cali"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Mantenimiento de tableros eléctricos en Cali"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Instalación y cambio de griferías en Cali"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Inspección de tuberías con cámara endoscópica en Cali"}}
+        ]
+      }
+    })}</script>
 
     <!-- Google Tag Manager / Google Ads (Head) -->
     <!-- 
