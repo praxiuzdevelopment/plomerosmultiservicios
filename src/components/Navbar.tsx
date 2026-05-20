@@ -42,9 +42,9 @@ export default function Navbar() {
           {/* Logo */}
           <a href="/" className="flex items-center gap-3 shrink-0 group">
             <img
-              src="/favicon.svg"
+              src="/Logotipo.svg"
               alt="Plomeros Multiservicios"
-              className="h-[50px] md:h-[58px] w-auto transition-transform duration-300 group-hover:scale-110"
+              className="h-[65px] md:h-[73px] w-auto transition-transform duration-300 group-hover:scale-110"
             />
           </a>
 
