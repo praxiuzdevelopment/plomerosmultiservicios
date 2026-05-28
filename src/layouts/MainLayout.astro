@@ -110,6 +110,21 @@ const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-18192196435');
+
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18192196435/aSrcCM-PybQcENPG2-JD',
+          'value': 1.0,
+          'currency': 'COP',
+          'event_callback': callback
+        });
+        return false;
+      }
     </script>
   </head>
   <body class="min-h-screen flex flex-col overflow-x-hidden">
