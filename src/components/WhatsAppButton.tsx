@@ -10,6 +10,7 @@ export default function WhatsAppButton() {
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => { const g = (globalThis as any).gtag; if (typeof g === 'function') g('event', 'conversion', { send_to: 'AW-18192196435/bmuQCMKm47QcENPG2-JD', value: 1.0, currency: 'COP' }); }}
       className="fixed bottom-6 right-6 z-50 group"
       aria-label="Contáctanos por WhatsApp"
     >

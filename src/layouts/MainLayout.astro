@@ -111,6 +111,14 @@ const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
       gtag('js', new Date());
       gtag('config', 'AW-18192196435');
 
+      function gtag_whatsapp_conversion() {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18192196435/bmuQCMKm47QcENPG2-JD',
+          'value': 1.0,
+          'currency': 'COP'
+        });
+      }
+
       function gtag_report_conversion(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
