@@ -60,6 +60,15 @@ export default function ContactForm() {
 
       if (response.ok) {
         setStatus("success");
+        const g = (globalThis as any).gtag;
+        if (typeof g === 'function') {
+          g('event', 'generate_lead', { currency: 'COP', value: 1.0 });
+          g('event', 'conversion', {
+            send_to: 'AW-18192196435/aSrcCM-PybQcENPG2-JD',
+            value: 1.0,
+            currency: 'COP',
+          });
+        }
         setFormData({ name: "", email: "", phone: "", service: "", message: "" });
         setTimeout(() => setStatus("idle"), 5000);
       } else {
