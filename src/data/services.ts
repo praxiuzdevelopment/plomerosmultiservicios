@@ -146,6 +146,18 @@ export const electricalServices: Service[] = [
     imagePlaceholder: "técnico revisando tablero eléctrico y breakers",
   },
   {
+    slug: "instalacion-electrica-domiciliaria",
+    title: "Instalaciones Eléctricas Domiciliarias en Cali",
+    shortDescription:
+      "Instalaciones eléctricas domiciliarias completas en Cali. De principio a fin: diseño, cableado, tablero, tomacorrientes e iluminación bajo norma RETIE para obra nueva y remodelaciones.",
+    longDescription:
+      "Realizamos instalaciones eléctricas domiciliarias completas en Cali para viviendas nuevas, remodelaciones y ampliaciones residenciales. Nuestros electricistas certificados se encargan de todo el proceso de principio a fin: diseño del sistema eléctrico, tendido de cableado bajo norma RETIE y NTC 2050, instalación del tablero de distribución y breakers, tomacorrientes, interruptores, puntos de iluminación y duchas eléctricas. Trabajamos con materiales certificados del calibre adecuado para cada circuito, garantizando una instalación segura, eficiente y duradera. Cada proyecto incluye pruebas de continuidad, aislamiento y verificación del sistema completo antes de la entrega. Atendemos hogares, conjuntos residenciales y locales en Cali, Palmira y Yumbo.",
+    icon: "home",
+    category: "electricidad",
+    image: "/duct_wiring.jpg",
+    imagePlaceholder: "electricista realizando instalación eléctrica domiciliaria completa",
+  },
+  {
     slug: "instalacion-cableado",
     title: "Instalación de Cableado Eléctrico y Duchas",
     shortDescription:
