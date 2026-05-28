@@ -62,11 +62,9 @@ export default function ContactForm() {
         setStatus("success");
         const g = (globalThis as any).gtag;
         if (typeof g === 'function') {
-          g('event', 'generate_lead', { currency: 'COP', value: 1.0 });
-          g('event', 'conversion', {
-            send_to: 'AW-18192196435/aSrcCM-PybQcENPG2-JD',
-            value: 1.0,
-            currency: 'COP',
+          g('event', 'generate_lead', { currency: 'COP', value: 1 });
+          g('event', 'form_submit', {
+            form_destination: 'https://www.plomerosmultiservicios.com/contacto',
           });
         }
         setFormData({ name: "", email: "", phone: "", service: "", message: "" });
