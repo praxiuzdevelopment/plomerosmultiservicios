@@ -110,6 +110,7 @@ const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-18192196435');
+      gtag('config', 'AW-18245432754');
 
       function gtag_whatsapp_conversion() {
         gtag('event', 'conversion', {
@@ -130,6 +131,11 @@ const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
           'value': 1.0,
           'currency': 'COP',
           'event_callback': callback
+        });
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18245432754/5bzbCOqks8AcELLrjPxD',
+          'value': 1.0,
+          'currency': 'COP'
         });
         return false;
       }
