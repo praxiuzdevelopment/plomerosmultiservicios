@@ -51,7 +51,7 @@ const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
     <title>{title} | Plomeros Multiservicios</title>
 
     <!-- LocalBusiness Structured Data -->
-    <script type="application/ld+json" is:inline>{JSON.stringify({
+    <script type="application/ld+json" is:inline set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Plomeros Multiservicios",
@@ -91,7 +91,7 @@ const canonicalUrl = `${siteBase}${Astro.url.pathname}`;
           {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Inspección de tuberías con cámara endoscópica en Cali"}}
         ]
       }
-    })}</script>
+    })} />
 
     <!-- Google Tag Manager / Google Ads (Head) -->
     <!-- 

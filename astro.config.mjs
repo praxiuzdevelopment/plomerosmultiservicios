@@ -8,7 +8,7 @@ import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.plomerosmultiservicios.com',
+  site: 'https://plomerosmultiservicios.com',
   integrations: [react(), sitemap()],
 
   vite: {

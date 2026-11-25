@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.plomerosmultiservicios.com/sitemap-index.xml
+Sitemap: https://plomerosmultiservicios.com/sitemap-index.xml
